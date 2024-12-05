@@ -1,0 +1,6 @@
+dataset_path: "4/American_Housing_Data_20231209.csv"
+seed: 21
+test_split: 0.2
+val_split: 0.1
+max_epochs: 25
+batch_size: 64

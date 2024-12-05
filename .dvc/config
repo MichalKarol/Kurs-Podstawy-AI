@@ -1,0 +1,8 @@
+[core]
+    remote = myremote
+    autostage = true
+[hydra]
+    enabled = True
+['remote "myremote"']
+    url = s3://kursbucket
+    endpointurl = http://172.18.0.2:9000

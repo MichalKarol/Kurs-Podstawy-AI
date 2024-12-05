@@ -1,0 +1,19 @@
+services:
+  minio:
+    image: minio/minio
+    volumes:
+      - datastore:/data
+    environment:
+      - "MINIO_ACCESS_KEY=minio"
+      - "MINIO_SECRET_KEY=minio123"
+    command: server /data
+
+  createbuckets:
+    image: minio/mc
+    depends_on:
+      - minio
+    entrypoint: >
+      /bin/sh -c " /usr/bin/mc alias set myminio http://minio:9000 minio minio123; /usr/bin/mc mb myminio/kursbucket; /usr/bin/mc policy set public myminio/kursbucket; exit 0; "
+
+volumes:
+  datastore:

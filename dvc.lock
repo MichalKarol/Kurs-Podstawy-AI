@@ -1,0 +1,21 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python 4/main.py
+    deps:
+    - path: 4/American_Housing_Data_20231209.csv
+      hash: md5
+      md5: b73373265a6945b81f5ebec4a820b0ab
+      size: 4321514
+    - path: 4/main.py
+      hash: md5
+      md5: 2bd67f576bde4d5d029e1d6eb1a787e0
+      size: 5506
+    params:
+      params.yaml:
+        batch_size: 128
+        dataset_path: 4/American_Housing_Data_20231209.csv
+        max_epochs: 25
+        seed: 21
+        test_split: 0.2
+        val_split: 0.1
