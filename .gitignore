@@ -4,4 +4,3 @@ wandb
 logs
 params.yaml
 lightning_logs
-data
